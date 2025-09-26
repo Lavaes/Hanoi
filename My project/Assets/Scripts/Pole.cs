@@ -12,7 +12,7 @@ public class Pole : MonoBehaviour
     {
         if (poleNumber == 1)
         {
-            disks[0
+
         }
     }
 
@@ -27,6 +27,10 @@ public class Pole : MonoBehaviour
     bool IsSelected()
     {
         return selected;
+    }
+    public void OnMouseDown() {
+        //Manager.PoleClicked(poleNumber);
+
     }
     // send pole number to manager, tell it that someone clicked it, and have the manager move the disks and stuff
 }

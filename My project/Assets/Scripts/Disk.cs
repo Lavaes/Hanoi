@@ -15,11 +15,11 @@ public class Disk : MonoBehaviour
     {
 
     }
-    void Move(float x, float y)
-    {
-        transform.position = new Vector2(Unity)
-    }
     public float GetWidth() {
         return width;
+    }
+    public void Reset()
+    {
+        
     }
 }
