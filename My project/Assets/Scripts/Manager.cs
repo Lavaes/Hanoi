@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using Unity.Multiplayer.Center.Common;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,8 +9,8 @@ public class Manager : MonoBehaviour
 {
     [SerializeField] Text movesText;
     public int moves = 0;
-    [SerializeField] Disk[] disks;
-    [SerializeField] Pole[] poles;
+    [SerializeField] Disk[] disks = new Disk[5];
+    [SerializeField] Pole[] poles = new Pole[3];
     private bool finished = false;
     public int selectedPole = -1;
     [SerializeField] Text gameWin;
@@ -21,7 +23,7 @@ public class Manager : MonoBehaviour
         }
         moves = 0;
         finished = false;
-
+        selectedPole = -1;
     }
 
     // Update is called once per frame
@@ -34,21 +36,24 @@ public class Manager : MonoBehaviour
     // have another int selected pole for previous pole -- compare to new selected pole
     // btw when you click the same pole twice (same as selectedpole when comparing) change it to unselected and do nothing
     // layers: give winText layer 2 (top when it appears)
+
+
+    // give all objects appropriate managers and stuff
     public void PoleClicked(int poleNumber)
     {
         if (selectedPole == -1)
         {
             selectedPole = poleNumber;
-            poles[selectedPole].GetComponent<Renderer>().material.color = Color.gray;
+            //poles[selectedPole].GetComponent<Renderer>().material.color = Color.gray;
         }
         else if (selectedPole == poleNumber)
         {
-            poles[selectedPole].GetComponent<Renderer>().material.color = Color.white;
+            //poles[selectedPole].GetComponent<Renderer>().material.color = Color.white;
             selectedPole = -1; // unselect
         }
         else if (selectedPole != -1 && selectedPole != poleNumber)
         {
-            poles[selectedPole].GetComponent<Renderer>().material.color = Color.white;
+            //poles[selectedPole].GetComponent<Renderer>().material.color = Color.white;
             MoveDisk(selectedPole, poleNumber); // from, to
             selectedPole = -1;
         }

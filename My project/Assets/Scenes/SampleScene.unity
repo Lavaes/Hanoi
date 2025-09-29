@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 155331067}
   - component: {fileID: 155331066}
   - component: {fileID: 155331068}
+  - component: {fileID: 155331069}
   m_Layer: 0
   m_Name: Right
   m_TagString: Untagged
@@ -219,9 +220,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2bcd0997b0187345909c723cdb18995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 2035129087}
   selected: 0
-  poleNumber: 0
+  poleNumber: 3
   disks: []
+  poleColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!70 &155331069
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155331065}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5987976, y: 4.6295652}
+  m_Direction: 0
 --- !u!1 &419193123
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,6 +362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89cba8fa28d000941ae85d2ad881b2e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
   width: 0
 --- !u!1 &519420028
 GameObject:
@@ -560,6 +601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89cba8fa28d000941ae85d2ad881b2e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 2035129087}
   width: 0
 --- !u!1 &619394800
 GameObject:
@@ -847,6 +889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89cba8fa28d000941ae85d2ad881b2e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
   width: 0
 --- !u!1 &899370356
 GameObject:
@@ -948,6 +991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89cba8fa28d000941ae85d2ad881b2e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
   width: 0
 --- !u!1 &979125887
 GameObject:
@@ -1049,6 +1093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89cba8fa28d000941ae85d2ad881b2e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
   width: 0
 --- !u!1 &999105097
 GameObject:
@@ -1141,7 +1186,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1041144558}
   - component: {fileID: 1041144557}
-  - component: {fileID: 1041144559}
+  - component: {fileID: 1041144560}
+  - component: {fileID: 1041144561}
   m_Layer: 0
   m_Name: Left
   m_TagString: Untagged
@@ -1219,7 +1265,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1041144559
+--- !u!114 &1041144560
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1231,9 +1277,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2bcd0997b0187345909c723cdb18995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 2035129087}
   selected: 0
-  poleNumber: 0
+  poleNumber: 1
   disks: []
+  poleColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!70 &1041144561
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041144556}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5987976, y: 4.6295652}
+  m_Direction: 0
 --- !u!1 &1698986183
 GameObject:
   m_ObjectHideFlags: 0
@@ -1324,6 +1409,7 @@ GameObject:
   - component: {fileID: 1948925183}
   - component: {fileID: 1948925182}
   - component: {fileID: 1948925184}
+  - component: {fileID: 1948925185}
   m_Layer: 0
   m_Name: Middle
   m_TagString: Untagged
@@ -1413,9 +1499,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2bcd0997b0187345909c723cdb18995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 2035129087}
   selected: 0
-  poleNumber: 0
+  poleNumber: 2
   disks: []
+  poleColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!70 &1948925185
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948925181}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5987976, y: 4.6295652}
+  m_Direction: 0
 --- !u!1 &2035129087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1455,10 +1580,10 @@ MonoBehaviour:
   - {fileID: 899370359}
   poles:
   - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1948925184}
   - {fileID: 155331068}
-  - {fileID: 0}
   selectedPole: -1
+  gameWin: {fileID: 0}
 --- !u!4 &2035129089
 Transform:
   m_ObjectHideFlags: 0

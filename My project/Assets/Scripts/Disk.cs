@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Disk : MonoBehaviour
 {
+    [SerializeField] GameObject manager;
     [SerializeField] float width;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
