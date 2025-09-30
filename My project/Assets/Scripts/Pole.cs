@@ -13,11 +13,15 @@ public class Pole : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
         if (poleNumber == 1)
         {
-            // place all disks
+            disks.Add(manager.GetComponent<Manager>().allDisks()[4]);
+            disks.Add(manager.GetComponent<Manager>().allDisks()[3]);
+            disks.Add(manager.GetComponent<Manager>().allDisks()[2]);
+            disks.Add(manager.GetComponent<Manager>().allDisks()[1]);
+            disks.Add(manager.GetComponent<Manager>().allDisks()[0]);
         }
+        else disks.Clear();
     }
 
     // Update is called once per frame

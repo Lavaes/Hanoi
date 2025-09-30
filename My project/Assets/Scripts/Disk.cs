@@ -3,7 +3,8 @@ using UnityEngine;
 public class Disk : MonoBehaviour
 {
     [SerializeField] GameObject manager;
-    [SerializeField] float width;
+    [SerializeField] float width; // assigned before
+    [SerializeField] int layer; // assigned before
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,6 +19,10 @@ public class Disk : MonoBehaviour
     }
     public float GetWidth() {
         return width;
+    }
+    public int GetLayer()
+    {
+        return layer;
     }
     public void Reset()
     {
