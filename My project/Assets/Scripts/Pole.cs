@@ -48,5 +48,17 @@ public class Pole : MonoBehaviour
         manager.GetComponent<Manager>().PoleClicked(poleNumber);
         
     }
+    public void Reset()
+    {
+        if (poleNumber == 1)
+        {
+            disks.Add(manager.GetComponent<Manager>().allDisks()[4]);
+            disks.Add(manager.GetComponent<Manager>().allDisks()[3]);
+            disks.Add(manager.GetComponent<Manager>().allDisks()[2]);
+            disks.Add(manager.GetComponent<Manager>().allDisks()[1]);
+            disks.Add(manager.GetComponent<Manager>().allDisks()[0]);
+        }
+        else disks.Clear();
+    }
     // send pole number to manager, tell it that someone clicked it, and have the manager move the disks and stuff
 }

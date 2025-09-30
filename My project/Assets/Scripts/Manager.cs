@@ -28,6 +28,7 @@ public class Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        movesText.text = "Moves: " + moves;
         IsWon();
         if (!finished)
         {
@@ -36,8 +37,18 @@ public class Manager : MonoBehaviour
         else if (finished)
         {
             winText.enabled = true;
-        }
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+            poles[0].Reset();
+            poles[1].Reset();
+            poles[2].Reset();
             RenderPoles();
+            moves = 0;
+            finished = false;
+            selectedPole = -1;
+            }
+        }
+        RenderPoles();
     }
     // if selected pole = -1 or wtv, do the things
     // poleclicked(poleNumber) turns the pole on with different color here
@@ -101,7 +112,6 @@ public class Manager : MonoBehaviour
                 y = y + 0.45f;
                 poles[i].disks[j].transform.position = new Vector3(x, y, 0f); // should put it at the correct positions
             }
-                    
         }
     }
     public void IsWon ()
