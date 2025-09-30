@@ -15,13 +15,13 @@ public class Manager : MonoBehaviour
     [SerializeField] Pole[] poles = new Pole[3];
     private bool finished = false;
     public int selectedPole = -1;
-    [SerializeField] Text gameWin;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         RenderPoles();
         moves = 0;
         finished = false;
+        winText.enabled = false;
         selectedPole = -1;
     }
 
@@ -39,13 +39,13 @@ public class Manager : MonoBehaviour
             winText.enabled = true;
             if (Input.GetKeyDown(KeyCode.R))
             {
-            poles[0].Reset();
-            poles[1].Reset();
-            poles[2].Reset();
-            RenderPoles();
-            moves = 0;
-            finished = false;
-            selectedPole = -1;
+                poles[0].Reset();
+                poles[1].Reset();
+                poles[2].Reset();
+                RenderPoles();
+                moves = 0;
+                finished = false;
+                selectedPole = -1;
             }
         }
         RenderPoles();
@@ -60,22 +60,26 @@ public class Manager : MonoBehaviour
     // give all objects appropriate managers and stuff
     public void PoleClicked(int poleNumber)
     {
-        if (selectedPole == -1)
+        if (finished == false)
         {
-            selectedPole = poleNumber;
-            //poles[selectedPole].GetComponent<Renderer>().material.color = Color.gray;
+            if (selectedPole == -1)
+            {
+                selectedPole = poleNumber;
+                //poles[selectedPole].GetComponent<Renderer>().material.color = Color.gray;
+            }
+            else if (selectedPole == poleNumber)
+            {
+                //poles[selectedPole].GetComponent<Renderer>().material.color = Color.white;
+                selectedPole = -1; // unselect
+            }
+            else if (selectedPole != -1 && selectedPole != poleNumber)
+            {
+                //poles[selectedPole].GetComponent<Renderer>().material.color = Color.white;
+                MoveDisk(selectedPole - 1, poleNumber - 1); // from, to
+                selectedPole = -1;
+            }
         }
-        else if (selectedPole == poleNumber)
-        {
-            //poles[selectedPole].GetComponent<Renderer>().material.color = Color.white;
-            selectedPole = -1; // unselect
-        }
-        else if (selectedPole != -1 && selectedPole != poleNumber)
-        {
-            //poles[selectedPole].GetComponent<Renderer>().material.color = Color.white;
-            MoveDisk(selectedPole-1 , poleNumber-1); // from, to
-            selectedPole = -1;
-        }
+        
     }
     // pole 1: x = -3.5, pole 2: x = 0, pole 3: x = 3.5
     // bottom disk: y = -2.1, y = -1.65, y = -1.2, y = -0.75, y = -0.3
@@ -114,12 +118,17 @@ public class Manager : MonoBehaviour
             }
         }
     }
-    public void IsWon ()
+    public void IsWon()
     {
         if (poles[2].disks.Count == 5)
         {
             finished = true;
-
+            
         }
+        else finished = false;
+    }
+    public bool GetFinished()
+    {
+        return finished;
     }
 }

@@ -27,11 +27,15 @@ public class Pole : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (IsSelected())
+        if (manager.GetComponent<Manager>().GetFinished() == false)
         {
-            this.GetComponent<Renderer>().material.color = Color.gray;
+            if (IsSelected())
+            {
+                this.GetComponent<Renderer>().material.color = Color.gray;
+            }
+            else this.GetComponent<Renderer>().material.color = Color.white;
         }
-        else this.GetComponent<Renderer>().material.color = Color.white;
+        
     }
     bool IsSelected()
     {
